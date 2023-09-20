@@ -5,6 +5,11 @@
         Instructor, AssistantProf, Prof
     }
 
+    public enum IsTenured
+    {
+        True, False
+    }
+
     public class Instructor
     {
 
@@ -17,7 +22,7 @@
         public DateTime HiringDate { get; set; } 
 
         public Rank Rank { get; set; }  
-        public string IsTenured { get; set; }
+        public IsTenured IsTenured { get; set; }
 
     }
 }

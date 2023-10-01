@@ -6,7 +6,7 @@
 <table class="table table-dark">
 
     <tr>
-        <th colspan="7">Student</th>
+        <th colspan="8">Student</th>
     </tr>
 
     <tr>
@@ -17,6 +17,7 @@
         <td>GPA</td>
         <td>Details</td>
         <td>Update</td>
+        <td>Delete</td>
 
 
     </tr>
@@ -30,6 +31,7 @@
             <td>@student.GPA</td>
             <td><a asp-action="ShowDetail" asp-route-id="@student.Id">Show Details</a></td>
             <td><a asp-action="UpdateStudent" class="btn btn-primary" asp-route-id="@student.Id">Update</a></td>
+            <td><a asp-action="Delete" class="btn btn-danger" asp-route-id="@student.Id">Delete</a></td>
 
         </tr>
     }

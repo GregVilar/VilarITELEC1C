@@ -78,9 +78,35 @@ namespace VilarITELEC1C.Controllers
             return View("Index", StudentList);
 
         }
-            
+
+        [HttpGet]
+        public IActionResult Delete(int id)
+        {
+            //Search for the student whose id matches the given id
+            Student? student = StudentList.FirstOrDefault(st => st.Id == id);
+
+            if (student != null)//was an student found?
+                return View(student);
+
+            return NotFound();
+        }
+
+
+        [HttpPost]
+        public IActionResult Delete(Student newStudent)
+        {
+            Student? student = StudentList.FirstOrDefault(st => st.Id == newStudent.Id);
+
+
+            if (student != null)//was an student found?
+                StudentList.Remove(student);
+            return View("Index", StudentList);
+        }
     }
 
 }
+
+
+
 
 
